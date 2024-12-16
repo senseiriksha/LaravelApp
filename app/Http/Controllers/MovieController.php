@@ -47,7 +47,7 @@ class MovieController extends Controller
         // );
 
         return view('movies.index', [
-            'movie' => Movie::all()->toArray()
+            'movies' => Movie::all()->toArray()
         ]);
     }
 
