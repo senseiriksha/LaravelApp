@@ -11,6 +11,7 @@ class Dashboard
 
     public function welcome()
     {
+        // Returns predefined name
         return $this->introduction->getName("Antonio");
         return $this->introductioni->getName("Mirko");
     }
