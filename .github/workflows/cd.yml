@@ -15,8 +15,11 @@ jobs:
         host: ${{ secrets.SERVER_IP }}
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
+        passphrase: ${{ secrets.SSH_PASSPHRASE }}
         script: |
           cd /home/www/laravel.croatia-hq.net/
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_rsa
           git pull origin main
           composer install --no-dev --optimize-autoloader --prefer-dist
           export NVM_DIR=~/.nvm
