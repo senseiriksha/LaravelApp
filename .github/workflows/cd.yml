@@ -19,7 +19,7 @@ jobs:
         script: |
           cd /home/www/laravel.croatia-hq.net/
           eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/id_rsa
+          ssh-add ~/.ssh/id_ed25519_laravel_app
           git pull origin main
           composer install --no-dev --optimize-autoloader --prefer-dist
           export NVM_DIR=~/.nvm
