@@ -32,7 +32,7 @@ class MovieTest extends TestCase
     
         $response->assertStatus(200);
     
-        $response->assertSee('Filmovi')
+        $response->assertSee('Popis svih filmova')
                  ->assertSee($movie1->name)
                  ->assertSee($movie2->name)
                  ->assertSee($movie3->name);
