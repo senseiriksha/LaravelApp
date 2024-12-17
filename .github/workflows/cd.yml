@@ -15,10 +15,7 @@ jobs:
         host: ${{ secrets.SERVER_IP }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}
         script: |
-          ssh-add - <<< "${{ secrets.SSH_KEY }}"
-          ssh-add -l
           cd /home/www/laravel.croatia-hq.net/
           git pull origin main
           composer install --no-dev --optimize-autoloader --prefer-dist
